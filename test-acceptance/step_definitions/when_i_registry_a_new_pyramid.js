@@ -6,9 +6,9 @@ module.exports = () => {
         const world = this.world;
         // Write code here that turns the phrase above into concrete actions
         request.post("http://localhost:3000/pyramids",{},(error,response)=>{
-            console.log(error);
+            console.log(":::::"+response.body);
             world.responseStatusCode = response.statusCode;
-            world.responseBody = response.body;
+            world.responseBody = JSON.parse(response.body);
             done(error);
         });
     });

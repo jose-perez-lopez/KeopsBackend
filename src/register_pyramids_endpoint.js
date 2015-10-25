@@ -2,6 +2,7 @@
 
 
 module.exports = (req, res, next) => {
-    res.send(201,{"id":1});
+    var response = {"id":1};
+    res.send(201,response);
     return next();
 };
