@@ -12,7 +12,7 @@
     "restify": "^4.0.3"
   },
   "scripts": {
-    "test-aceptance": "node --harmony node_modules/.bin/cucumber.js test-acceptance/features -r ./test-acceptance/step_definitions  --format pretty"
+    "test-acceptance": "node --harmony node_modules/.bin/cucumber.js test-acceptance/features -r ./test-acceptance/step_definitions  --format pretty"
   },
   "author": "",
   "license": "ISC"
