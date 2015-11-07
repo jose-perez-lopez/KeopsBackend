@@ -6,7 +6,7 @@ machine:
 test:
 
   override:
-    - npm run test-acceptance
+    - npm run test-acceptance-ci
 
 deployment:
   staging:
