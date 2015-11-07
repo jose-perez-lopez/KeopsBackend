@@ -1,5 +1,9 @@
 "use strict";
-const config = require("./config.json");
+
+
+const fs = require('fs');
+const config = fs.existsSync( process.cwd()+'/src/config.json') ? require('./config.json') : {};
+
 var redis = require("redis");
 
 var redis_server_host = process.env.REDIS_HOST || config.redis_host
