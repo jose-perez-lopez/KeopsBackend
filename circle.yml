@@ -4,7 +4,9 @@ machine:
   services:
     - redis
 test:
-
+  pre:
+    - npm start:
+      background:true
   override:
     - npm run test-acceptance-ci
 

@@ -2,7 +2,7 @@
   "name": "KeopsBackend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "chai": "^3.4.0",
     "cucumber": "0.6.0",
@@ -13,7 +13,8 @@
   },
   "scripts": {
     "test-acceptance": "node --harmony node_modules/.bin/cucumber.js test-acceptance/features -r ./test-acceptance/step_definitions  --format pretty",
-    "test-acceptance-ci": "node --harmony node_modules/.bin/cucumber.js test-acceptance/features -r ./test-acceptance/step_definitions  --format json > $CIRCLE_TEST_REPORTS/tests.cucumber"
+    "test-acceptance-ci": "node --harmony node_modules/.bin/cucumber.js test-acceptance/features -r ./test-acceptance/step_definitions  --format json > $CIRCLE_TEST_REPORTS/tests.cucumber",
+    "start":"node --harmony ./src/server.js"
   },
   "author": "",
   "license": "ISC"
