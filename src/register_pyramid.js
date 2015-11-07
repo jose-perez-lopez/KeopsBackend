@@ -1,6 +1,5 @@
 "use strict";
-var redis = require("redis"),
-    client = redis.createClient({"host":"192.168.99.100","port":"32770"});//TODO CONNECTION DATA TO CONFIG FILE AND PRO?
+const client = require("./storage_redis.js");
 
 var registerPyramid = function (done){
     var defaulData = { status: [ 1, 1, 1 ] };
