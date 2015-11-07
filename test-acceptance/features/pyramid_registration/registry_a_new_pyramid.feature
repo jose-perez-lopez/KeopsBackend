@@ -7,3 +7,11 @@ Feature: Registry a new pyramid
     When I registry a new pyramid
     Then I will receive a response with status code 201
     And I will receive a response with an "id" field
+
+
+  Scenario: Retrieve default data of a registered pyramid
+    Given there is a pyramid already registered
+    When I retrieve the pyramid data
+    Then I will receive the following data
+      | id | status |
+      | 1  | 1,1,1  |

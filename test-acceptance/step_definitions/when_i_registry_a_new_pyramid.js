@@ -2,14 +2,20 @@
 const request = require("request");
 
 module.exports = () => {
-    this.When(/^I registry a new pyramid$/,  (done) => {
+    this.When(/^I registry a new pyramid$/, (done) => {
         const world = this.world;
         // Write code here that turns the phrase above into concrete actions
-        request.post("http://localhost:3000/pyramids",{},(error,response)=>{
-            console.log(":::::"+response.body);
-            world.responseStatusCode = response.statusCode;
-            world.responseBody = JSON.parse(response.body);
-            done(error);
-        });
+
+        request(
+            {
+                uri: "http://localhost:3000/pyramids",
+                method: 'POST',
+                json: true
+            }, (error, response, body)=> {
+                world.responseStatusCode = response.statusCode;
+                world.id = body.id;
+                world.responseBody = body;
+                done(error);
+            });
     });
 };
