@@ -6,7 +6,7 @@ machine:
 test:
   pre:
     - npm start:
-      background:true
+      background: true
   override:
     - npm run test-acceptance-ci
 
