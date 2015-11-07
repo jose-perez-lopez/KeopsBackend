@@ -1,7 +1,6 @@
 'use strict';
 
-var redis = require("redis"),
-    client = redis.createClient({"host": "192.168.99.100", "port": "32770"});//TODO CONNECTION DATA TO CONFIG FILE AND PRO?
+const client = require("../../src/storage_redis.js");
 
 module.exports = function () {
     this.Before(function (done) {
