@@ -8,7 +8,7 @@ test:
     - npm start:
         background: true
   override:
-    - npm run test-acceptance-ci
+    - npm run test-acceptance
 
 deployment:
   staging:
