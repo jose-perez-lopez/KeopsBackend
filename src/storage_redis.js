@@ -6,9 +6,18 @@ const config = fs.existsSync( process.cwd()+'/src/config.json') ? require('./con
 
 var redis = require("redis");
 
-var redis_server_host = process.env.REDIS_HOST || config.redis_host
-var redis_server_port = process.env.REDIS_PORT || config.redis_port
+var client;
 
-var client = redis.createClient({"host":redis_server_host,"port":redis_server_port});
+if (process.env.REDISTOGO_URL) {
+    var rtg   = require("url").parse(process.env.REDISTOGO_URL);
+     client = require("redis").createClient(rtg.port, rtg.hostname);
+    redis.auth(rtg.auth.split(":")[1]);
+} else {
+    var redis_server_host = process.env.REDIS_HOST || config.redis_host
+    var redis_server_port = process.env.REDIS_PORT || config.redis_port
+    client = redis.createClient({"host":redis_server_host,"port":redis_server_port});
+}
+
+
 
 module.exports = client;
