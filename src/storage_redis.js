@@ -9,7 +9,7 @@ var redis = require("redis");
 var client;
 
 console.log("INIT REDIS CONNECTION");
-if (process.env.REDISTOGO_URL) {
+if (process.env.REDIS_URL) {
     console.log("REDIS CONNECTION PRO");
     var rtg   = require("url").parse(process.env.REDIS_URL);
     console.log("rtg.hostname",rtg.hostname,"rtg.port",rtg.port)
