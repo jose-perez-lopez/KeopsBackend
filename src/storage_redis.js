@@ -9,8 +9,8 @@ var redis = require("redis");
 var client;
 
 if (process.env.REDISTOGO_URL) {
-
     var rtg   = require("url").parse(process.env.REDIS_URL);
+    console.log("rtg.hostname",rtg.hostname,"rtg.port",rtg.port)
     client = require("redis").createClient(rtg.port, rtg.hostname);
     client.auth(rtg.auth.split(":")[1]);
 } else {
@@ -20,5 +20,5 @@ if (process.env.REDISTOGO_URL) {
 }
 
 
-
+
 module.exports = client;
