@@ -9,9 +9,10 @@ var redis = require("redis");
 var client;
 
 if (process.env.REDISTOGO_URL) {
+
     var rtg   = require("url").parse(process.env.REDIS_URL);
-     client = require("redis").createClient(rtg.port, rtg.hostname);
-    redis.auth(rtg.auth.split(":")[1]);
+    client = require("redis").createClient(rtg.port, rtg.hostname);
+    client.auth(rtg.auth.split(":")[1]);
 } else {
     var redis_server_host = process.env.REDIS_HOST || config.redis_host
     var redis_server_port = process.env.REDIS_PORT || config.redis_port
