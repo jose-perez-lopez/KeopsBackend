@@ -20,5 +20,4 @@ if (process.env.REDISTOGO_URL) {
 }
 
 
-
 module.exports = client;
