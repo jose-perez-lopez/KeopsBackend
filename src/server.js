@@ -16,6 +16,7 @@ server.get("/pyramids",require("./get_pyramid_data_endpoint"));
 server.get("/pyramids/:pyramidId",require("./get_pyramid_data_endpoint"));
 server.put("/pyramids/:pyramidId",require("./set_pyramid_statuses_endpoint"));
 server.post("/pyramids",require("./register_pyramids_endpoint"));
+server.del("/pyramids/:pyramidId",require("./delete_pyramid_endpoint"));
 
 
 

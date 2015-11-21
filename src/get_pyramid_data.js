@@ -6,13 +6,16 @@ var getPyramidData = function (id,done){
 
     if(id) {
         client.get(id, (err, reply)=> {
-            var allPyramids = [];
-            var aPyramid = {};
-            aPyramid.id = Number(id);
-            aPyramid.status = JSON.parse(reply).status;
-            allPyramids[0] = aPyramid;
-            done(JSON.stringify(allPyramids));
-
+            if(reply===null){
+                done(null)
+            }else {
+                var allPyramids = [];
+                var aPyramid = {};
+                aPyramid.id = Number(id);
+                aPyramid.status = JSON.parse(reply).status;
+                allPyramids[0] = aPyramid;
+                done(JSON.stringify(allPyramids));
+            }
         })
     }else{
         client.send_command("KEYS",["[0-9]*"],(err,resp)=>{

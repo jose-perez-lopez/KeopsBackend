@@ -11,7 +11,6 @@ module.exports = function (){
                 method: 'GET',
                 json: true
             }, (error, response, body)=> {
-                console.log("BODY"+body);
                 world.responseStatusCode = response.statusCode;
                 world.responseBody = body;
                 done(error);
