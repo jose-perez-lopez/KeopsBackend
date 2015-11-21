@@ -5,8 +5,8 @@ const _ = require("lodash");
 const request = require("request"),
     assert = require('assert');
 
-module.exports = () => {
-    this.Then(/^I will receive the following data$/, function (table, done) {
+module.exports = function (){
+    this.Then(/^I will receive the following data$/,  (table, done) => {
         var result = this.world.responseBody;
         var expectedData = table2PyramidJson(table);
         expectedData.map((element)=> {

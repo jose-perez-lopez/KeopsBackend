@@ -1,9 +1,11 @@
 'use strict';
 const request = require("request");
 
-module.exports = () => {
+module.exports = function (){
     this.Given(/^there are two pyramids already registered$/, (done) => {
         const world = this.world;
+
+
         // Write code here that turns the phrase above into concrete actions
         for(var i=0;i<2;i++) {
             request(

@@ -1,7 +1,7 @@
 'use strict';
 const request = require("request");
 
-module.exports = () => {
+module.exports = function (){
     this.When(/^I retrieve all pyramids registered data$/, (done) => {
         const world = this.world;
         // Write code here that turns the phrase above into concrete actions

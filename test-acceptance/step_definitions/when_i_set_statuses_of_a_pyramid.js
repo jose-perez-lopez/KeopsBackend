@@ -1,7 +1,7 @@
 'use strict';
 const request = require("request");
 
-module.exports = () => {
+module.exports = function (){
     this.When(/^I set the statuses of the pyramid as$/, (statusesTable,done) => {
         const world = this.world;
 

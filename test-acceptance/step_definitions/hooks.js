@@ -3,9 +3,12 @@
 const client = require("../../src/storage_redis.js");
 
 module.exports = function () {
-    this.Before(function (done) {
+    this.Before( (done)=> {
+
         this.world = {};
-        client.send_command("FLUSHDB", [], function (err, res) {
+
+        client.send_command("FLUSHDB", [],  (err, res) =>  {
+            console.log("done",done)
             done()
         });
     });
