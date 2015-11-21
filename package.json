@@ -17,5 +17,9 @@
     "start":"node --harmony ./src/server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">= 4.2.1"
+  },
+
 }
