@@ -14,7 +14,6 @@ module.exports = function (){
                     method: 'POST',
                     json: true
                 }, (error, response, body)=> {
-                    console.log("REQUEST, ",error, " ", response, " ", body);
                     world.responseStatusCode = response.statusCode;
                     world.id = body.id;
                     world.responseBody = body;

@@ -14,7 +14,7 @@ var getPyramidData = function (id,done){
                 aPyramid.id = Number(id);
                 aPyramid.status = JSON.parse(reply).status;
                 allPyramids[0] = aPyramid;
-                done(JSON.stringify(allPyramids));
+                done(JSON.stringify(aPyramid));
             }
         })
     }else{

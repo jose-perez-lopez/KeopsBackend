@@ -7,8 +7,6 @@ const config = require(process.cwd() + '/src/config.js');
 module.exports = function () {
 
     this.Before((scenario, done) => {
-
-        console.log("BEFORE");
         this.world = {};
         clearDB()
             .then( ()=> httpServices.start(config.http_port))

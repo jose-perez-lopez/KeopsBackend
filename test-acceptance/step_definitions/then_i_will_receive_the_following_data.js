@@ -8,7 +8,13 @@ const request = require("request"),
 module.exports = function (){
     this.Then(/^I will receive the following data$/,  (table, done) => {
         var result = this.world.responseBody;
+       console.log("RESULT.length",result.length)
+        if(result.length== null){ // just one pyramid we transform it into an array to compare with the data form the feature file
+            result = [result];
+        }
+
         var expectedData = table2PyramidJson(table);
+
         expectedData.map((element)=> {
             var elementFound = _.find(result, element);
             assert.deepEqual(elementFound, element);
