@@ -4,7 +4,7 @@ const config = require('./config.js');
 const httpServices = require('./http_services.js');
 
 httpServices
-    .start(config.PORT)
+    .start(config.http_port)
     .then( server => {
         log.info(server.url);
     })

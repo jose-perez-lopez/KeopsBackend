@@ -18,18 +18,18 @@ server.put("/pyramids/:pyramidId",require("./set_pyramid_statuses_endpoint"));
 server.post("/pyramids",require("./register_pyramids_endpoint"));
 server.del("/pyramids/:pyramidId",require("./delete_pyramid_endpoint"));
 
-var serverPort = process.env.PORT || 3000;
+
 
 module.exports = {
     start: (port) => {
         return new Promise(
             (resolve, reject) => {
                 server.listen(port, (err) => {
-                    if (err) {
-                        reject(err);
-                    }
-                    else {
+                    if (!err) {
+                        console.log("Server listening ",port);
                         resolve(server);
+                    } else {
+                        reject(err);
                     }
                 });
             }
